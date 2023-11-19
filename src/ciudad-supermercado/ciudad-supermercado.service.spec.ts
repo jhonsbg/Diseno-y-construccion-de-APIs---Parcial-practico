@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { Test, TestingModule } from '@nestjs/testing';
 import { CiudadSupermercadoService } from './ciudad-supermercado.service';
@@ -102,13 +102,13 @@ describe('CiudadSupermercadoService', () => {
     await expect(() => service.addSupermarketToCity("0", newSupermercado.id)).rejects.toHaveProperty("message", "The city with the given id was not found");
   });
 
-  it('findAllSupermarketsFromCity should return supermarkets by city', async ()=>{
-    const supermercados: SupermercadoEntity[] = await service.findAllSupermarketsFromCity(ciudad.id);
+  it('findSupermarketsFromCity should return supermarkets by city', async ()=>{
+    const supermercados: SupermercadoEntity[] = await service.findSupermarketsFromCity(ciudad.id);
     expect(supermercados.length).toBe(5)
   });
 
-  it('findAllSupermarketsFromCity should throw an exception for an invalid city', async () => {
-    await expect(()=> service.findAllSupermarketsFromCity("0")).rejects.toHaveProperty("message", "The city with the given id was not found"); 
+  it('findSupermarketsFromCity should throw an exception for an invalid city', async () => {
+    await expect(()=> service.findSupermarketsFromCity("0")).rejects.toHaveProperty("message", "The city with the given id was not found"); 
   });
 
   it('findSupermarketFromCity should return supermarket by city', async () => {

@@ -31,7 +31,7 @@ export class CiudadSupermercadoService {
         return await this.ciudadRepository.save(ciudad);
     }
 
-    async findAllSupermarketsFromCity(ciudadId: string): 
+    async findSupermarketsFromCity(ciudadId: string): 
     Promise<SupermercadoEntity[]> {
         const ciudad: CiudadEntity = await this.ciudadRepository.findOne({
             where: { id: ciudadId },
