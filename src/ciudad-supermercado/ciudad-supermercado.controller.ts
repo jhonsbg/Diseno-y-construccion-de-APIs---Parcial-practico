@@ -18,7 +18,7 @@ export class CiudadSupermercadoController {
     }
 
     @Get(':ciudadId/supermarkets/:supermercadoId')
-    async findSupermarketFromCity(@Param('ciudadId') ciudadId: string, @Param('artwsupermercadoIdorkId') supermercadoId: string){
+    async findSupermarketFromCity(@Param('ciudadId') ciudadId: string, @Param('supermercadoId') supermercadoId: string){
         return await this.ciudadSupermercadoService.findSupermarketFromCity(ciudadId, supermercadoId);
     }
 
